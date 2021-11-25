@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey</title>
+    <link rel="stylesheet" href="survey-styles.css">
+    <Header>
+        <h1 id="title">Survey Form</h1>
+    </Header>
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <div class="step-row">
+                <div class="progress"></div>
+                <div class="step-col"><small>Step 1</small></div>
+                <div class="step-col"><small>Step 2</small></div>
+                <div class="step-col"><small>Step 3</small></div>
+                <div class="step-col"><small>Step 4</small></div>
+            </div>
+            <form id="intro">
+                <h3><br><br>This survey will take a few minutes<br><br></h3>
+                <p>The purpose of this survey is to measure the severity of<br> the pandemic
+                    in different areas. With the information<br> provided by your consent in
+                    this form, we can get an<br>accurate measure of what steps need to 
+                    be taken<br> to reduce the threat that this virus poses. By filling<br>
+                    this form, you are contributing towards helping the<br>community. Hence, we
+                    request you to provide all info<br>as accurately as possible. <br><br><br>
+                </p>
+                <button id="Next1" type="button">Next</button>
+            </form>
+            <form id="names">
+                <h2> Personal Details<br><br></h2>
+                <input id="fname" type="text" placeholder="First Name" class="form-inputs" required>
+                <input id="mname" type="text" placeholder="Middle Name(Optional)" class="form-inputs">
+                <input id="lname" type="text" placeholder="Last Name" class="form-inputs" required>
+                <input id="age" type="number" placeholder="Age" class="form-inputs" required>
+                <input id="number" type="number" placeholder="Phone No.(Optional)" class="form-inputs">
+                <input id="State" type="text" placeholder="Enter State" class="form-inputs" required>
+                <input id="City" type="text" placeholder="Enter City Name" class="form-inputs" required>
+                <input id="District" type="text" placeholder="Enter District" class="form-inputs" required>
+
+                <br>
+                <br>
+
+                <div class="btn-box">
+                    <button id="Back1" type="button">Back</button>
+                    <button id="Next2" type="button">Next</button>
+                </div>
+            </form>
+            <form id="qset1">
+                <label for="q1" id="q1"><br><br><br>Have you and your family been vaccinated?(If yes, enter <br>the name of the vaccine)<br><br></label>
+                <input type="text" placeholder="Your Response" required>
+                <label for="q2" id="q2"><br><br><br>No. of doses of vaccination taken(If taken otherwise skip)<br><br></label>
+                <input type="text" placeholder="Your Response">
+                <label for="q3" id="q3"><br><br><br>Have you or a family member fallen sick to the virus<br> before?<br><br></label>
+                <input type="text" placeholder="Your Response" required>
+                <label for="q4" id="q4"><br><br><br>Have you, a family member or a neighbouring resident<br> been feeling sick for the past few days?<br><br></label>
+                <input type="text" placeholder="Your Response" required>
+                <br><br><br>
+                <div class="btn-box">
+                    <button id="Back2" type="button">Back</button>
+                    <button id="Next3" type="button">Next</button>
+                </div>
+            </form>
+            <form id="qset2">
+                <label for="q1" id="q1"><br><br><br>If you have any ongoing ilnesses or symptoms<br> describe below<br><br></label>
+                <input type="text" placeholder="Your Response" required>
+                <label for="q1" id="q1"><br><br><br>Are you taking the necessary precautions to reduce <br>
+                    the chances of infection?(Maintaining distance,<br>using hand sanitizers,etc)<br><br></label>
+                <input type="text" placeholder="Your Response" required>
+                <label for="q1" id="q1"><br><br><br>Are you contributing to awareness about the disease <br>in nearby areas?<br><br></label>
+                <input type="text" placeholder="Your Response" required>
+                <label for="q1" id="q1"><br><br><br>Would you say that your nearby residents are<br> taking precautions and showing awareness as well?<br><br></label>
+                <input type="text" placeholder="Your Response" required>
+                <br><br><br>
+                <div class="btn-box">
+                <button id="Back3" type="button">Back</button>
+                <button id="Submit" type="Submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script>
+        var intro = document.getElementById("intro");
+        var names = document.getElementById("names");
+        var qset1 = document.getElementById("qset1");
+        var qset2 = document.getElementById("qset2");
+        var Next1 = document.getElementById("Next1");
+        var Next2 = document.getElementById("Next2");
+        var Next3 = document.getElementById("Next3");
+
+        var Back1 = document.getElementById("Back1");
+        var Back2 = document.getElementById("Back2");
+        var Back3 = document.getElementById("Back3");
+
+        var progress = document.getElementsByClassName("progress")[0];
+        var steps = document.getElementsByClassName("step-col");
+
+        Next1.onclick = function () {
+            intro.style.left = "-500px";
+            names.style.left = "40px";
+            progress.style.width = "50%";
+        }
+        Back1.onclick = function () {
+            intro.style.left = "40px";
+            names.style.left = "500px";
+            progress.style.width = "25%";
+        }
+        Next2.onclick = function () {
+            names.style.left = "-500px";
+            qset1.style.left = "40px";
+            progress.style.width = "75%";
+        }
+        Back2.onclick = function () {
+            names.style.left = "40px";
+            qset1.style.left = "500px";
+            progress.style.width = "50%";
+        }
+        Next3.onclick = function () {
+            qset1.style.left = "-500px";
+            qset2.style.left = "40px";
+            progress.style.width = "100%";
+        }
+        Back3.onclick = function () {
+            qset1.style.left = "40px";
+            qset2.style.left = "500px";
+            progress.style.width = "75%";
+        }
+    </script>
+</body>
+
+</html>
